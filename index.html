@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en, nb">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Multimedia</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body class="body">
+		<section class="section">
+			<!-- Picture elementet går inn og bruker media som er forkortet media-queries der vi setter opp bryte punkt på hvilket bilde som skal vises til hvilken skjermstørrelse -->
+			<picture>
+				<!-- Source som setter opp et media kriterie på skjerm størrelse og srcset på samme måte som src tar i mot en fil. Hoved forskjellen mellom src og srcset er at srcset kan ta i mot flere ting separert med ett komma  -->
+				<source media="(min-width: 768px)" srcset="assets/image1.jpg" />
+				<source media="(max-width: 465px)" srcset="assets/image2.jpg" />
+				<!-- Om nettleseren ikke godtar source, eller det oppstår andre problemer vil picture elementet falle tilbake til å bruke et img element -->
+				<img src="assets/image2.jpg" style="width:auto;" />
+			</picture>
+		</section>
+
+		<section class="section">
+			<!-- Video elementet tar i mot video, mest brukt er mp4 filer. Men WebM og Ogg er også godtatt. -->
+			<!-- Video har ulike nøkkelord som kan brukes som controls, muted, autoplay, loop etc -->
+			<video src="assets/Supernatural.mp4" controls></video>
+		</section>
+
+		<section class="section">
+			<!-- Audio elementet tar i mot lyd, mest brukt er mp3 filer. Men Ogg er også godtatt. -->
+			<!-- Audio har ulike nøkkelord som kan brukes som controls, muted, autoplay, loop etc -->
+			<audio src="assets/skyrim.mp3" controls></audio>
+		</section>
+
+		<section class="section">
+			<!-- Iframe kan ta i mot både video og audio fra lokal lagring, og fra eksterne sider som for eksempel youtube -->
+			<iframe width="560" height="315" src="assets/Supernatural.mp4"></iframe>
+
+			<iframe width="560" height="315" src="assets/skyrim.mp3"></iframe>
+
+			<iframe
+				width="560"
+				height="315"
+				src="https://www.youtube.com/embed/11tEGHevPJI?si=N-pJ_9B05sP6utij"
+				title="YouTube video player"></iframe>
+		</section>
+
+		<section class="section">
+			<!-- Iframe kopiert fra youtube sin ´Del´. Kommer med youtube sin default stil og tillatelser  -->
+			<iframe
+				width="560"
+				height="315"
+				src="https://www.youtube.com/embed/11tEGHevPJI?si=N-pJ_9B05sP6utij"
+				title="YouTube video player"
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+				allowfullscreen></iframe>
+		</section>
+
+		<section class="section">
+			<!-- Iframe kan også brukes til å vise tilbake til nettsider. I dette tilfellet må vi være litt obs på hvor store nettsider vi linker til da det kan gi opplevelse problemer(preformance issues) og gjøre siden vår treg om den tar i mot for mye innhold.-->
+			<iframe width="560" height="315" src="https://kodeloftetfremside.netlify.app"></iframe>
+		</section>
+	</body>
+</html>
